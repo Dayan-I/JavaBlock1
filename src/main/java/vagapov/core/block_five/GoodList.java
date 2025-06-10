@@ -1,5 +1,7 @@
 package vagapov.core.block_five;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,7 +18,13 @@ public class GoodList {
      * @return список
      */
     public List<String> deleteDuplicates(List<String> list) {
-        return null;
+        List<String> listWithoutDuplicates = new ArrayList<>();
+        for (String s: list){
+            if (!listWithoutDuplicates.contains(s)) {
+                listWithoutDuplicates.add(s);
+            }
+        }
+        return listWithoutDuplicates;
     }
 
     /**
@@ -27,7 +35,10 @@ public class GoodList {
      * @return список
      */
     public List<String> getSortListAsc(List<String> list) {
-        return null;
+        List<String> sortedList = new ArrayList<>();
+        sortedList.addAll(list);
+        Collections.sort(sortedList);
+        return sortedList;
     }
 
     /**
@@ -40,6 +51,14 @@ public class GoodList {
      * Дубли не добавлять в список
      */
     public List<String> findIdenticalElements(List<String> listOne, List<String> listTwo) {
-        return null;
+        List<String> indenticalElementsList = new ArrayList<>();
+        for(String s : listTwo){
+            if(listOne.contains(s)){
+                if(!indenticalElementsList.contains(s)){
+                    indenticalElementsList.add(s);
+                }
+            }
+        }
+        return indenticalElementsList;
     }
 }

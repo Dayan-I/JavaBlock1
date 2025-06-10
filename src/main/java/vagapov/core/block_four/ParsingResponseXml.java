@@ -2,7 +2,12 @@ package vagapov.core.block_four;
 
 import vagapov.core.block_four.model.UserResponse;
 
+import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.*;
+import java.net.URL;
+import java.util.stream.Collectors;
 
 /**
  * Задача из рабочего процесса
@@ -17,9 +22,17 @@ import javax.xml.bind.JAXBException;
  */
 public class ParsingResponseXml {
 
-    public UserResponse method() throws JAXBException {
+    public UserResponse method() throws JAXBException, IOException {
+        InputStream user_resp = ParsingResponseXml.class.getResourceAsStream("C:/Java/TestTask/LearnCore/src/main/resources/response/responseUser.xml");// через try with resource делать?
 
-        return null;
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(user_resp))) {
+            String body;
+            body = br.lines().collect(Collectors.joining());
+            StringReader reader = new StringReader(body);
+            JAXBContext context = JAXBContext.newInstance(UserResponse.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            return (UserResponse) unmarshaller.unmarshal(reader);
+        }
     }
 }
 

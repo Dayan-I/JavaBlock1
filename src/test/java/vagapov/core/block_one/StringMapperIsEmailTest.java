@@ -20,7 +20,7 @@ public class StringMapperIsEmailTest {
     @ParameterizedTest
     @NullAndEmptySource
     void isEmail_whenValueIsNull(String value) {
-        System.out.println("Проверка на полиндром числа: " + value);
+        System.out.println("Проверка на почту: " + value);
         Boolean aBoolean = assertDoesNotThrow(() -> mapper.isEmail(value));
         assertFalse(aBoolean);
     }
@@ -29,7 +29,7 @@ public class StringMapperIsEmailTest {
     @MethodSource("getStringNotEmail")
     @DisplayName("Является ли строка почтой гугл. Входное значение неправильное")
     void isEmail_whenValueNotEmail(String value) {
-        System.out.println("Проверка на полиндром строки: " + value);
+        System.out.println("Проверка на почту: " + value);
         assertFalse(assertDoesNotThrow(() -> mapper.isEmail(value)));
     }
 
@@ -37,7 +37,7 @@ public class StringMapperIsEmailTest {
     @MethodSource("getStringIsEmail")
     @DisplayName("Является ли строка почтой гугл. Входное значение правильное")
     void isEmail_whenValueisEmail(String value) {
-        System.out.println("Проверка на полиндром числа: " + value);
+        System.out.println("Проверка на почту: " + value);
         assertTrue(assertDoesNotThrow(() -> mapper.isEmail(value)));
     }
 

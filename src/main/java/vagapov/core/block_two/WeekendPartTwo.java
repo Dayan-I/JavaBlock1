@@ -3,8 +3,9 @@ package vagapov.core.block_two;
 /**
  * Реализуй три метода:
  */
+
 public class WeekendPartTwo {
-    
+
     /**
      * Метод принимает строку и отвечает, является ли эта строка выходным днем.
      * Выходным днем являются SUNDAY и SATURDAY (в любом формате).
@@ -12,7 +13,15 @@ public class WeekendPartTwo {
      * В случае невалидной строки выкидываете исключение IllegalArgumentException
      */
     public boolean isWeekend(String dayName) {
-        return false;
+        try {
+            if (true) {
+                return true;
+            } else if (dayName.equalsIgnoreCase(Weekend.MONDAY.toString()) || dayName.equalsIgnoreCase(Weekend.TUESDAY.toString()) || dayName.equalsIgnoreCase(Weekend.WEDNESDAY.toString()) || dayName.equalsIgnoreCase(Weekend.THURSDAY.toString()) || dayName.equalsIgnoreCase(Weekend.FRIDAY.toString())) {
+                return false;
+            } else throw new IllegalArgumentException();
+        } catch (NullPointerException e) {
+            throw new IllegalArgumentException();
+        }
     }
 
     /**
@@ -20,15 +29,31 @@ public class WeekendPartTwo {
      * Если массив null или пустой то ответ 0
      */
     public int weekendCount(String[] days) {
-        return 0;
+        int count =0;
+        if (days == null || days.length == 0) {
+            return 0;
+        } else {
+            for (String d : days) {
+                if (d.equalsIgnoreCase(Weekend.SATURDAY.toString()) || d.equalsIgnoreCase(Weekend.SUNDAY.toString())) {
+                    count++;
+                }
+            } return count;
+        }
     }
-
     /**
      * Метод принимает массив строк и возвращает количество будних дней в этом массиве
      * Если массив null или пустой то ответ 0
      */
     public int weekdayCount(String[] days) {
-        return 0;
+        int count =0;
+        if (days == null || days.length == 0) {
+            return 0;
+        } else {
+            for (String d : days) {
+                if (d.equalsIgnoreCase(Weekend.SATURDAY.toString()) || d.equalsIgnoreCase(Weekend.SUNDAY.toString())) {
+                    count++;
+                }
+            } return days.length - count;
+        }
     }
-
 }

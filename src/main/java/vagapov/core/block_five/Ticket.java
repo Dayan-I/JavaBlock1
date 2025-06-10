@@ -9,5 +9,18 @@ package vagapov.core.block_five;
  * 3. Добавьте геттеры и сеттеры
  * 4. Добавьте статический метод 'getTicket()' который бы возвращал пустой объект данного класса
  */
-public class Ticket {
+public class  Ticket <T> {
+    private T object;
+
+    public T getObject() {
+        return object;
+    }
+
+    public void setObject(T object) {
+        this.object = object;
+    }
+
+    public static <T> Ticket<T> getTicket(){
+        return new Ticket<T>();
+    }
 }

@@ -14,20 +14,20 @@ public class TicketTest {
     void test() {
         //Раскомментировать данные строки после решения задачи
 
-//        assertDoesNotThrow(() -> {
-//            System.out.println("Проверяем что можно создать объект Ticket через метод getTicket() и что объект будет работать с типом String");
-//            Ticket<String> stringTicket = Ticket.getTicket();
-//            stringTicket.setObject("Name");
-//            String ticketObject = stringTicket.getObject();
-//            assertEquals("Name", ticketObject);
-//        }, "Не получилось создать объект через метод getTicket() или параметризовать типом String");
-//
-//        assertDoesNotThrow(() -> {
-//            System.out.println("Проверяем что можно создать объект Ticket через конструктор и что объект будет работать с типом Integer");
-//            Ticket<Integer> integerTicket = new Ticket<>();
-//            integerTicket.setObject(12);
-//            Integer ticketObject = integerTicket.getObject();
-//            assertEquals(12, ticketObject);
-//        }, "Не получилось создать объект через конструктор или параметризовать типом Integer");
+        assertDoesNotThrow(() -> {
+            System.out.println("Проверяем что можно создать объект Ticket через метод getTicket() и что объект будет работать с типом String");
+            Ticket<String> stringTicket = Ticket.getTicket();
+            stringTicket.setObject("Name");
+            String ticketObject = stringTicket.getObject();
+            assertEquals("Name", ticketObject);
+        }, "Не получилось создать объект через метод getTicket() или параметризовать типом String");
+
+        assertDoesNotThrow(() -> {
+            System.out.println("Проверяем что можно создать объект Ticket через конструктор и что объект будет работать с типом Integer");
+            Ticket<Integer> integerTicket = new Ticket<>();
+            integerTicket.setObject(12);
+            Integer ticketObject = integerTicket.getObject();
+            assertEquals(12, ticketObject);
+        }, "Не получилось создать объект через конструктор или параметризовать типом Integer");
     }
 }

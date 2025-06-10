@@ -16,15 +16,15 @@ public class HumanTest {
         /**
          * Раскоментируйте данный код когда будете уверены что решили задачу в классе Human
          */
-//        assertNotNull(oldHuman.getSecret());
-//        assertNotNull(oldHuman.getNews());
-//        assertNotNull(oldHuman.getExperience());
-//        assertNotNull(oldHuman.getGossip());
-//
-//        Human newHuman = new Human();
-//        assertNull(oldHuman.getSecret());
-//        assertNull(oldHuman.getNews());
-//        assertNull(oldHuman.getExperience());
-//        assertNull(oldHuman.getGossip());
+        assertNotNull(oldHuman.getSecret());
+       assertNotNull(oldHuman.getNews());
+       assertNotNull(oldHuman.getExperience());
+        assertNotNull(oldHuman.getGossip());
+
+       Human newHuman = new Human();
+        assertNull(oldHuman.getSecret());
+       assertNull(oldHuman.getNews());
+        assertNull(oldHuman.getExperience());
+        assertNull(oldHuman.getGossip());
     }
 }

@@ -12,10 +12,11 @@ package vagapov.core.block_two;
  * Добавьте в класс конструктор для человека без секретов/новостей/опыта/сплетней (новорожденный)
  */
 public class Human {
-    private final String secret; //секретики
-    private final String news; //новости
-    private final String experience; //опыт
-    private final String gossip; //сплетни
+    public final String secret; //секретики
+    public final String news; //новости
+    public final String experience; //опыт
+    public final String gossip; //сплетни
+
 
     public Human(String secret, String news, String experience, String gossip) {
         this.secret = secret;
@@ -23,7 +24,23 @@ public class Human {
         this.experience = experience;
         this.gossip = gossip;
     }
+    public String getSecret(){
+        return secret;
+    }
+    public String getNews(){
+        return news;
+    }
+    public String getExperience() {
+        return experience;
+    }
+    public String getGossip() {
+        return gossip;
+    }
 
-    // Твой код здесь
-
+    public Human (){
+        this.secret = null;
+        this.news = null;
+        this.experience = null;
+        this.gossip = null;
+    }
 }
